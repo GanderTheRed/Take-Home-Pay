@@ -48,7 +48,8 @@ namespace Take_Home_Pay
                 else if (YearlyPay > 100000) //replace with correct number
                 {
                     return 0;
-                } else
+                } 
+                else
                 {
                     return 0;
                 }
