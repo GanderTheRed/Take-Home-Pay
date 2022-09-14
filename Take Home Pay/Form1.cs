@@ -32,12 +32,50 @@ namespace Take_Home_Pay
             //Convert all text inputs to integers
             int HourlyWage = Convert.ToInt32(txtWage.Text);
             int HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
-            //int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
+            int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
             
-            
+            int TaxCalcMarginal()
+            {
+                // Marginal tax rate area
+                int MarginalTax = 0;
+                
+                //Calculation for marginal tax rate
+                //Return to resolve errors for now
+                if (YearlyPay < 14398)
+                {
+                    return 0;
+                }
+                else if (YearlyPay > 100000) //replace with correct number
+                {
+                    return 0;
+                } else
+                {
+                    return 0;
+                }
+            }
+             int TaxCalcAlberta()
+            {
+                //Alberta tax calc
+                int AlbertaTax = 0;
+                //Return to resolve errors for now
+                return 1;
+            }
+
+            //
 
 
-            
+
+
+
+            //Final calc                
+
+
+
+
+
+
+
+
             lblOutput.Text = "$" + Convert.ToString(HourlyWage * HoursWorked);
             lblOutput.Visible = true;
             
