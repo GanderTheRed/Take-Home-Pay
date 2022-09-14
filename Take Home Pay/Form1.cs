@@ -34,24 +34,12 @@ namespace Take_Home_Pay
             int HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
             int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
             int PayPeriod = 0;
-            string PayPeriodInput = cmbPayPeriod.Text;
-            //Convert pay period input to a number
-            if (PayPeriodInput == "Weekly") 
-            {
-                PayPeriod = 1;
-            }
-            else if (PayPeriodInput == "Bi-Weekly") 
-            {
-                PayPeriod = 2;
-            }
-            else if (PayPeriodInput == "Monthly") 
-            {
-                PayPeriod = 3;
-            } else
-            {
-                MessageBox.Show("Please enter a value into Pay Period.");
-            }
-        
+            
+
+
+            
+            lblOutput.Text = HourlyWage*HoursWorked;
+
             
         }
 

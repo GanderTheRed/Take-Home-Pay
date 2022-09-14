@@ -33,8 +33,6 @@
             this.txtWage = new System.Windows.Forms.TextBox();
             this.lblAveragePay = new System.Windows.Forms.Label();
             this.txtYearlyPay = new System.Windows.Forms.TextBox();
-            this.lblPayPeriod = new System.Windows.Forms.Label();
-            this.cmbPayPeriod = new System.Windows.Forms.ComboBox();
             this.lblExpectedPay = new System.Windows.Forms.Label();
             this.lblOutput = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -81,27 +79,6 @@
             this.txtYearlyPay.Size = new System.Drawing.Size(100, 23);
             this.txtYearlyPay.TabIndex = 6;
             // 
-            // lblPayPeriod
-            // 
-            this.lblPayPeriod.AutoSize = true;
-            this.lblPayPeriod.Location = new System.Drawing.Point(12, 100);
-            this.lblPayPeriod.Name = "lblPayPeriod";
-            this.lblPayPeriod.Size = new System.Drawing.Size(69, 15);
-            this.lblPayPeriod.TabIndex = 7;
-            this.lblPayPeriod.Text = "Pay Period :";
-            // 
-            // cmbPayPeriod
-            // 
-            this.cmbPayPeriod.FormattingEnabled = true;
-            this.cmbPayPeriod.Items.AddRange(new object[] {
-            "Weekly",
-            "Bi-Weekly",
-            "Monthly"});
-            this.cmbPayPeriod.Location = new System.Drawing.Point(242, 93);
-            this.cmbPayPeriod.Name = "cmbPayPeriod";
-            this.cmbPayPeriod.Size = new System.Drawing.Size(100, 23);
-            this.cmbPayPeriod.TabIndex = 8;
-            // 
             // lblExpectedPay
             // 
             this.lblExpectedPay.AutoSize = true;
@@ -135,7 +112,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(242, 122);
+            this.btnCalculate.Location = new System.Drawing.Point(242, 93);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(108, 32);
             this.btnCalculate.TabIndex = 12;
@@ -176,14 +153,12 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.lblExpectedPay);
-            this.Controls.Add(this.cmbPayPeriod);
-            this.Controls.Add(this.lblPayPeriod);
             this.Controls.Add(this.txtYearlyPay);
             this.Controls.Add(this.lblAveragePay);
             this.Controls.Add(this.txtWage);
             this.Controls.Add(this.lblHourlyWage);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Take Home Pay Calculator";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,8 +170,6 @@
         private TextBox txtWage;
         private Label lblAveragePay;
         private TextBox txtYearlyPay;
-        private Label lblPayPeriod;
-        private ComboBox cmbPayPeriod;
         private Label lblExpectedPay;
         private Label lblOutput;
         private Button btnExit;
