@@ -32,14 +32,14 @@ namespace Take_Home_Pay
             //Convert all text inputs to integers
             int HourlyWage = Convert.ToInt32(txtWage.Text);
             int HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
-            int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
-            int PayPeriod = 0;
+            //int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
+            
             
 
 
             
-            lblOutput.Text = HourlyWage*HoursWorked;
-
+            lblOutput.Text = "$" + Convert.ToString(HourlyWage * HoursWorked);
+            lblOutput.Visible = true;
             
         }
 
