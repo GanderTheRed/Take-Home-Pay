@@ -34,25 +34,62 @@ namespace Take_Home_Pay
             int HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
             int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
             
-            int TaxCalcMarginal()
+            double TaxCalcMarginal()
             {
+                
+                
                 // Marginal tax rate area
-                int MarginalTax = 0;
+                double MarginalTax = 0;
                 
                 //Calculation for marginal tax rate
-                //Return to resolve errors for now
-                if (YearlyPay < 14398)
-                {
-                    return 0;
-                }
-                else if (YearlyPay > 100000) //replace with correct number
-                {
-                    return 0;
-                } 
-                else
-                {
-                    return 0;
-                }
+              
+                    if (YearlyPay < 14398) //Basic personal amount
+                    {
+                        return MarginalTax = 0;
+                    }
+                    else if ((YearlyPay > 14398) ^ (YearlyPay <= 50197)) //Tax rates for each amount.
+                    {
+                        return MarginalTax = 1.25;
+                    } 
+                    else if ((YearlyPay > 50197) ^ (YearlyPay <= 100392))
+                    {
+                        return MarginalTax = 1.305;
+                    }
+                    else if ((YearlyPay > 100392) ^ (YearlyPay <= 131220))
+                    {
+                        return MarginalTax =  1.36;
+                    }
+                    else if ((YearlyPay > 131220) ^ (YearlyPay <= 155625))
+                    {
+                        return MarginalTax = 1.38;
+                    }
+                    else if ((YearlyPay > 155625) ^ (YearlyPay <= 157464))
+                    {
+                        return MarginalTax =  1.4138;
+                    }
+                    else if ((YearlyPay > 157464) ^ (YearlyPay <= 209952))
+                    {
+                        return MarginalTax = 1.4238;
+                    }
+                    else if ((YearlyPay > 209952) ^ (YearlyPay <= 221708))
+                    {
+                        return MarginalTax = 1.4338;
+                    }
+                    else if ((YearlyPay > 221708) ^ (YearlyPay <= 314928))
+                    {
+                        return MarginalTax = 1.47;
+                    }
+                    else if (YearlyPay > 314928)
+                    {
+                        return MarginalTax = 1.48;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please insert a valid input (Only Numbers)");
+                    }
+                    return MarginalTax;
+
+                
             }
              int TaxCalcAlberta()
             {
