@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblHourlyWage = new System.Windows.Forms.Label();
-            this.txtWage = new System.Windows.Forms.TextBox();
+            this.lblAvgHourlyWage = new System.Windows.Forms.Label();
             this.lblAveragePay = new System.Windows.Forms.Label();
             this.txtYearlyPay = new System.Windows.Forms.TextBox();
             this.lblExpectedPay = new System.Windows.Forms.Label();
@@ -40,31 +39,23 @@
             this.lblHoursWorked = new System.Windows.Forms.Label();
             this.txtHoursWorked = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblHourlyWageOut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblHourlyWage
+            // lblAvgHourlyWage
             // 
-            this.lblHourlyWage.AutoSize = true;
-            this.lblHourlyWage.Location = new System.Drawing.Point(12, 9);
-            this.lblHourlyWage.Name = "lblHourlyWage";
-            this.lblHourlyWage.Size = new System.Drawing.Size(123, 15);
-            this.lblHourlyWage.TabIndex = 3;
-            this.lblHourlyWage.Text = "Hourly Wage (CAD$) :";
-            // 
-            // txtWage
-            // 
-            this.txtWage.Location = new System.Drawing.Point(242, 6);
-            this.txtWage.Name = "txtWage";
-            this.txtWage.PlaceholderText = "15.00";
-            this.txtWage.Size = new System.Drawing.Size(100, 23);
-            this.txtWage.TabIndex = 4;
-            this.txtWage.TextChanged += new System.EventHandler(this.txtWage_TextChanged);
+            this.lblAvgHourlyWage.AutoSize = true;
+            this.lblAvgHourlyWage.Location = new System.Drawing.Point(12, 67);
+            this.lblAvgHourlyWage.Name = "lblAvgHourlyWage";
+            this.lblAvgHourlyWage.Size = new System.Drawing.Size(147, 15);
+            this.lblAvgHourlyWage.TabIndex = 3;
+            this.lblAvgHourlyWage.Text = "Avg Hourly Wage (CAD$) :";
             // 
             // lblAveragePay
             // 
             this.lblAveragePay.AutoSize = true;
-            this.lblAveragePay.Location = new System.Drawing.Point(12, 67);
+            this.lblAveragePay.Location = new System.Drawing.Point(12, 9);
             this.lblAveragePay.Name = "lblAveragePay";
             this.lblAveragePay.Size = new System.Drawing.Size(207, 15);
             this.lblAveragePay.TabIndex = 5;
@@ -73,7 +64,7 @@
             // 
             // txtYearlyPay
             // 
-            this.txtYearlyPay.Location = new System.Drawing.Point(242, 64);
+            this.txtYearlyPay.Location = new System.Drawing.Point(242, 6);
             this.txtYearlyPay.Name = "txtYearlyPay";
             this.txtYearlyPay.PlaceholderText = "40000";
             this.txtYearlyPay.Size = new System.Drawing.Size(100, 23);
@@ -125,9 +116,9 @@
             this.lblHoursWorked.AutoSize = true;
             this.lblHoursWorked.Location = new System.Drawing.Point(12, 38);
             this.lblHoursWorked.Name = "lblHoursWorked";
-            this.lblHoursWorked.Size = new System.Drawing.Size(172, 15);
+            this.lblHoursWorked.Size = new System.Drawing.Size(141, 15);
             this.lblHoursWorked.TabIndex = 14;
-            this.lblHoursWorked.Text = "Hours Worked This Pay Period :";
+            this.lblHoursWorked.Text = "Hours Worked Per Week :";
             // 
             // txtHoursWorked
             // 
@@ -142,11 +133,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblHourlyWageOut
+            // 
+            this.lblHourlyWageOut.AutoSize = true;
+            this.lblHourlyWageOut.Location = new System.Drawing.Point(242, 67);
+            this.lblHourlyWageOut.Name = "lblHourlyWageOut";
+            this.lblHourlyWageOut.Size = new System.Drawing.Size(38, 15);
+            this.lblHourlyWageOut.TabIndex = 16;
+            this.lblHourlyWageOut.Text = "label1";
+            this.lblHourlyWageOut.Visible = false;
+            this.lblHourlyWageOut.Click += new System.EventHandler(this.lblHourlyWageOut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 454);
+            this.Controls.Add(this.lblHourlyWageOut);
             this.Controls.Add(this.txtHoursWorked);
             this.Controls.Add(this.lblHoursWorked);
             this.Controls.Add(this.btnCalculate);
@@ -155,10 +158,10 @@
             this.Controls.Add(this.lblExpectedPay);
             this.Controls.Add(this.txtYearlyPay);
             this.Controls.Add(this.lblAveragePay);
-            this.Controls.Add(this.txtWage);
-            this.Controls.Add(this.lblHourlyWage);
+            this.Controls.Add(this.lblAvgHourlyWage);
             this.Name = "Form1";
-            this.Text = "Take Home Pay Calculator";
+            this.Text = "Take Home Pay Calculator 2022";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,8 +169,7 @@
         }
 
         #endregion
-        private Label lblHourlyWage;
-        private TextBox txtWage;
+        private Label lblAvgHourlyWage;
         private Label lblAveragePay;
         private TextBox txtYearlyPay;
         private Label lblExpectedPay;
@@ -177,5 +179,6 @@
         private Label lblHoursWorked;
         private TextBox txtHoursWorked;
         private ErrorProvider errorProvider1;
+        private Label lblHourlyWageOut;
     }
 }
