@@ -34,6 +34,8 @@ namespace Take_Home_Pay
             int HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
             int YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
             
+
+            
             double TaxCalcMarginal()
             {
                 
@@ -91,12 +93,59 @@ namespace Take_Home_Pay
 
                 
             }
-             int TaxCalcAlberta()
+             double TaxCalcAlberta()
             {
+               
+                //NEED TO FINISH THIS
+                
                 //Alberta tax calc
-                int AlbertaTax = 0;
+                double AlbertaTax = 0;
                 //Return to resolve errors for now
-                return 1;
+                    if (YearlyPay < 14398) //Basic personal amount
+                    {
+                        return AlbertaTax = 0;
+                    }
+                    else if ((YearlyPay > 14398) ^ (YearlyPay <= 50197)) //Tax rates for each amount.
+                    {
+                        return AlbertaTax = 1.25;
+                    }
+                    else if ((YearlyPay > 50197) ^ (YearlyPay <= 100392))
+                    {
+                        return AlbertaTax = 1.305;
+                    }
+                    else if ((YearlyPay > 100392) ^ (YearlyPay <= 131220))
+                    {
+                        return AlbertaTax = 1.36;
+                    }
+                    else if ((YearlyPay > 131220) ^ (YearlyPay <= 155625))
+                    {
+                        return AlbertaTax = 1.38;
+                    }
+                    else if ((YearlyPay > 155625) ^ (YearlyPay <= 157464))
+                    {
+                        return AlbertaTax = 1.4138;
+                    }
+                    else if ((YearlyPay > 157464) ^ (YearlyPay <= 209952))
+                    {
+                        return AlbertaTax = 1.4238;
+                    }
+                    else if ((YearlyPay > 209952) ^ (YearlyPay <= 221708))
+                    {
+                        return AlbertaTax = 1.4338;
+                    }
+                    else if ((YearlyPay > 221708) ^ (YearlyPay <= 314928))
+                    {
+                        return AlbertaTax = 1.47;
+                    }
+                    else if (YearlyPay > 314928)
+                    {
+                        return AlbertaTax = 1.48;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please insert a valid input (Only Numbers)");
+                    }
+                return AlbertaTax;
             }
 
             //
