@@ -40,13 +40,17 @@
             this.txtHoursWorked = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblHourlyWageOut = new System.Windows.Forms.Label();
+            this.lblOvertime = new System.Windows.Forms.Label();
+            this.txtOvertimeHours = new System.Windows.Forms.TextBox();
+            this.lblOvertimeRate = new System.Windows.Forms.Label();
+            this.txtOvertimeRate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAvgHourlyWage
             // 
             this.lblAvgHourlyWage.AutoSize = true;
-            this.lblAvgHourlyWage.Location = new System.Drawing.Point(12, 67);
+            this.lblAvgHourlyWage.Location = new System.Drawing.Point(12, 125);
             this.lblAvgHourlyWage.Name = "lblAvgHourlyWage";
             this.lblAvgHourlyWage.Size = new System.Drawing.Size(147, 15);
             this.lblAvgHourlyWage.TabIndex = 3;
@@ -103,7 +107,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(242, 93);
+            this.btnCalculate.Location = new System.Drawing.Point(242, 152);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(108, 32);
             this.btnCalculate.TabIndex = 12;
@@ -137,7 +141,7 @@
             // lblHourlyWageOut
             // 
             this.lblHourlyWageOut.AutoSize = true;
-            this.lblHourlyWageOut.Location = new System.Drawing.Point(242, 67);
+            this.lblHourlyWageOut.Location = new System.Drawing.Point(242, 125);
             this.lblHourlyWageOut.Name = "lblHourlyWageOut";
             this.lblHourlyWageOut.Size = new System.Drawing.Size(38, 15);
             this.lblHourlyWageOut.TabIndex = 16;
@@ -145,11 +149,49 @@
             this.lblHourlyWageOut.Visible = false;
             this.lblHourlyWageOut.Click += new System.EventHandler(this.lblHourlyWageOut_Click);
             // 
+            // lblOvertime
+            // 
+            this.lblOvertime.AutoSize = true;
+            this.lblOvertime.Location = new System.Drawing.Point(12, 67);
+            this.lblOvertime.Name = "lblOvertime";
+            this.lblOvertime.Size = new System.Drawing.Size(153, 15);
+            this.lblOvertime.TabIndex = 17;
+            this.lblOvertime.Text = "Overtime Hours This Week :";
+            // 
+            // txtOvertimeHours
+            // 
+            this.txtOvertimeHours.Location = new System.Drawing.Point(242, 64);
+            this.txtOvertimeHours.Name = "txtOvertimeHours";
+            this.txtOvertimeHours.PlaceholderText = "0";
+            this.txtOvertimeHours.Size = new System.Drawing.Size(100, 23);
+            this.txtOvertimeHours.TabIndex = 18;
+            // 
+            // lblOvertimeRate
+            // 
+            this.lblOvertimeRate.AutoSize = true;
+            this.lblOvertimeRate.Location = new System.Drawing.Point(12, 96);
+            this.lblOvertimeRate.Name = "lblOvertimeRate";
+            this.lblOvertimeRate.Size = new System.Drawing.Size(186, 15);
+            this.lblOvertimeRate.TabIndex = 19;
+            this.lblOvertimeRate.Text = "Overtime Rate (2 = Double Time) :";
+            // 
+            // txtOvertimeRate
+            // 
+            this.txtOvertimeRate.Location = new System.Drawing.Point(242, 93);
+            this.txtOvertimeRate.Name = "txtOvertimeRate";
+            this.txtOvertimeRate.PlaceholderText = "2.00";
+            this.txtOvertimeRate.Size = new System.Drawing.Size(100, 23);
+            this.txtOvertimeRate.TabIndex = 20;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 454);
+            this.Controls.Add(this.txtOvertimeRate);
+            this.Controls.Add(this.lblOvertimeRate);
+            this.Controls.Add(this.txtOvertimeHours);
+            this.Controls.Add(this.lblOvertime);
             this.Controls.Add(this.lblHourlyWageOut);
             this.Controls.Add(this.txtHoursWorked);
             this.Controls.Add(this.lblHoursWorked);
@@ -181,5 +223,9 @@
         private TextBox txtHoursWorked;
         private ErrorProvider errorProvider1;
         private Label lblHourlyWageOut;
+        private TextBox txtOvertimeRate;
+        private Label lblOvertimeRate;
+        private TextBox txtOvertimeHours;
+        private Label lblOvertime;
     }
 }

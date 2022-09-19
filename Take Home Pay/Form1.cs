@@ -31,8 +31,11 @@ namespace Take_Home_Pay
         {            
             //Form inputs
             //Convert all text inputs to integers
-            double HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
-            double YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
+            double HoursWorked = Convert.ToDouble(txtHoursWorked.Text);
+            double YearlyPay = Convert.ToDouble(txtYearlyPay.Text);
+            double OvertimeRate = Convert.ToDouble(txtOvertimeRate.Text);
+            double OvertimeHours = Convert.ToDouble(txtOvertimeHours.Text);
+            
             double HourlyWageCalc()
             {
                 double HourlyWage = YearlyPay / (HoursWorked * 52);
@@ -129,6 +132,23 @@ namespace Take_Home_Pay
                         }
                     return AlbertaTax;
                 }
+
+                double OvertimeCalc()
+            {
+                if(OvertimeHours == 0)
+                {
+                    return 1;
+                }
+                else if (OvertimeHours < 0)
+                {
+                    MessageBox.Show("Please enter a positive value for Overtime Hours.");
+                    return 0;
+                }
+                else
+                {
+                    return (OvertimeHours * (HourlyWageCalc() * OvertimeRate));
+                }
+            }
             
             //Calculations
             double HourlyWage = HourlyWageCalc();
@@ -142,9 +162,18 @@ namespace Take_Home_Pay
 
             //Final calculation                
             double FinalCalc()
-            {                       
-                double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + (PayPeriod - (PayPeriod * TaxRateMarginal));       
-                return FinalPayPeriod;
+            {   
+                if (OvertimeHours > 0)
+                {
+                    double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + (PayPeriod - (PayPeriod * TaxRateMarginal));
+                    double FinalOvertime = OvertimeCalc();
+                    return FinalPayPeriod + FinalOvertime;
+                } else
+                {
+                    double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + (PayPeriod - (PayPeriod * TaxRateMarginal));
+                    return FinalPayPeriod;
+                }
+                
             }
 
 
