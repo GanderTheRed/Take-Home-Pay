@@ -75,9 +75,9 @@
             this.lblExpectedPay.AutoSize = true;
             this.lblExpectedPay.Location = new System.Drawing.Point(12, 274);
             this.lblExpectedPay.Name = "lblExpectedPay";
-            this.lblExpectedPay.Size = new System.Drawing.Size(345, 15);
+            this.lblExpectedPay.Size = new System.Drawing.Size(318, 15);
             this.lblExpectedPay.TabIndex = 9;
-            this.lblExpectedPay.Text = "Expected Pay This Pay Period (Before Union Dues, Benefits, Etc) :";
+            this.lblExpectedPay.Text = "Expected Pay This Week (Before Union Dues, Benefits, Etc) :";
             this.lblExpectedPay.Click += new System.EventHandler(this.lblExpectedPay_Click);
             // 
             // lblOutput
@@ -116,9 +116,10 @@
             this.lblHoursWorked.AutoSize = true;
             this.lblHoursWorked.Location = new System.Drawing.Point(12, 38);
             this.lblHoursWorked.Name = "lblHoursWorked";
-            this.lblHoursWorked.Size = new System.Drawing.Size(141, 15);
+            this.lblHoursWorked.Size = new System.Drawing.Size(145, 15);
             this.lblHoursWorked.TabIndex = 14;
-            this.lblHoursWorked.Text = "Hours Worked Per Week :";
+            this.lblHoursWorked.Text = "Hours Worked This Week :";
+            this.lblHoursWorked.Click += new System.EventHandler(this.lblHoursWorked_Click);
             // 
             // txtHoursWorked
             // 

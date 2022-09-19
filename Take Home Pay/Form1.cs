@@ -148,12 +148,12 @@ namespace Take_Home_Pay
             }
 
 
-            lblOutput.Text = "$" + Convert.ToString(FinalCalc());
+            lblOutput.Text = "$" + String.Format("{0:0.00}", FinalCalc());
 
             //Invisible until calculate button has been pressed
             lblOutput.Visible = true;
             lblHourlyWageOut.Visible = true;
-            lblHourlyWageOut.Text = Convert.ToString(HourlyWage);
+            lblHourlyWageOut.Text = "$" + String.Format("{0:0.00}", HourlyWage);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -187,6 +187,11 @@ namespace Take_Home_Pay
         }
 
         private void lblHourlyWageOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHoursWorked_Click(object sender, EventArgs e)
         {
 
         }
