@@ -28,7 +28,21 @@ namespace Take_Home_Pay
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {            
+        {      
+            //Empty Inputs
+           /* string checkForEmpty()
+            {
+                if (txtOvertimeHours.Text = "")
+                {
+                   return txtOvertimeHours.Text = 1;
+                }
+                else
+                {
+                    txtOvertimeHours.Text = txtOvertimeHours.Text;
+                }
+            }
+            checkForEmpty();/*
+
             //Form inputs
             //Convert all text inputs to integers
             double HoursWorked = Convert.ToDouble(txtHoursWorked.Text);
@@ -150,7 +164,7 @@ namespace Take_Home_Pay
                 {
                     //Calculates overtime pay based off of Hourly Wage calculation.
                     return (OvertimeHours * (HourlyWageCalc() * OvertimeRate));
-                                }
+                }
             }
             
             //Calculations
