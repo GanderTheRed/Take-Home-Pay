@@ -28,22 +28,16 @@ namespace Take_Home_Pay
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            
-
+        {            
             //Form inputs
             //Convert all text inputs to integers
             double HoursWorked = Convert.ToInt32(txtHoursWorked.Text);
             double YearlyPay = Convert.ToInt32(txtYearlyPay.Text);
-
             double HourlyWageCalc()
             {
                 double HourlyWage = YearlyPay / (HoursWorked * 52);
                 return HourlyWage;
             }
-
-           
-
 
 
             //Methods
@@ -54,9 +48,9 @@ namespace Take_Home_Pay
                 
                     //Calculation for marginal tax rate
               
-                        if (YearlyPay < 14398) //Basic personal amount
+                        if (YearlyPay <= 14398) //Basic personal amount
                         {
-                            return MarginalTax = 0;
+                            return MarginalTax = 1;
                         }
                         else if ((YearlyPay > 14398) ^ (YearlyPay <= 50197)) //Tax rates for each amount.
                         {
@@ -105,9 +99,9 @@ namespace Take_Home_Pay
                     //Alberta tax calc
                     double AlbertaTax = 0;
                     //Return to resolve errors for now
-                        if (YearlyPay < 19369) //Basic personal amount
+                        if (YearlyPay <= 19369) //Basic personal amount
                         {
-                            return AlbertaTax = 0;
+                            return AlbertaTax = 1;
                         }
                         else if ((YearlyPay > 19369) ^ (YearlyPay <= 131220)) //Tax rates for each amount.
                         {
@@ -135,31 +129,23 @@ namespace Take_Home_Pay
                         }
                     return AlbertaTax;
                 }
-
+            
             //Calculations
             double HourlyWage = HourlyWageCalc();
 
             //Method storage
-            //Tax Rates
-            double TaxRateAlberta = TaxCalcAlberta();
-                double TaxRateMarginal = TaxCalcMarginal();
-                double PayPeriod = HourlyWageCalc() * HoursWorked;
-
-               
-
+                //Tax Rates
+                double TaxRateAlberta = TaxCalcAlberta();
+                    double TaxRateMarginal = TaxCalcMarginal();
+                    double PayPeriod = HourlyWageCalc() * HoursWorked;
+           
 
             //Final calculation                
             double FinalCalc()
-            {
-                double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + ((PayPeriod - (PayPeriod * TaxRateMarginal)));       
-
+            {                       
+                double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + (PayPeriod - (PayPeriod * TaxRateMarginal));       
                 return FinalPayPeriod;
             }
-
-
-            
-
-
 
 
             lblOutput.Text = "$" + Convert.ToString(FinalCalc());
@@ -177,8 +163,7 @@ namespace Take_Home_Pay
 
         private void txtWage_TextChanged(object sender, EventArgs e)
         {
-            
-        
+                    
         }
 
         private void msktxtTodays_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
