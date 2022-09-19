@@ -36,6 +36,7 @@ namespace Take_Home_Pay
             double OvertimeRate = Convert.ToDouble(txtOvertimeRate.Text);
             double OvertimeHours = Convert.ToDouble(txtOvertimeHours.Text);
             
+            //Coverts Yearly Pay to an Average Hourly Wage
             double HourlyWageCalc()
             {
                 double HourlyWage = YearlyPay / (HoursWorked * 52);
@@ -49,13 +50,13 @@ namespace Take_Home_Pay
                     // Marginal tax rate area
                     double MarginalTax = 0;
                 
-                    //Calculation for marginal tax rate
+                    //Calculation for marginal tax rate based off of 2021 rates
               
                         if (YearlyPay <= 14398) //Basic personal amount
                         {
                             return MarginalTax = 1;
                         }
-                        else if ((YearlyPay > 14398) ^ (YearlyPay <= 50197)) //Tax rates for each amount.
+                        else if ((YearlyPay > 14398) ^ (YearlyPay <= 50197)) //Tax rates for each range.
                         {
                             return MarginalTax = 1.25;
                         } 
@@ -101,12 +102,12 @@ namespace Take_Home_Pay
                 {                                               
                     //Alberta tax calc
                     double AlbertaTax = 0;
-                    //Return to resolve errors for now
+                    //Calculation for Alberta tax based off of 2021 rates.
                         if (YearlyPay <= 19369) //Basic personal amount
                         {
                             return AlbertaTax = 1;
                         }
-                        else if ((YearlyPay > 19369) ^ (YearlyPay <= 131220)) //Tax rates for each amount.
+                        else if ((YearlyPay > 19369) ^ (YearlyPay <= 131220)) //Tax rates for each range.
                         {
                             return AlbertaTax = 1.10;
                         }
@@ -133,6 +134,7 @@ namespace Take_Home_Pay
                     return AlbertaTax;
                 }
 
+            //Overtime calculations.
                 double OvertimeCalc()
             {
                 if(OvertimeHours == 0)
@@ -146,8 +148,9 @@ namespace Take_Home_Pay
                 }
                 else
                 {
+                    //Calculates overtime pay based off of Hourly Wage calculation.
                     return (OvertimeHours * (HourlyWageCalc() * OvertimeRate));
-                }
+                                }
             }
             
             //Calculations
@@ -165,18 +168,20 @@ namespace Take_Home_Pay
             {   
                 if (OvertimeHours > 0)
                 {
+                    //Involves Overtime Calculation
                     double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + (PayPeriod - (PayPeriod * TaxRateMarginal));
                     double FinalOvertime = OvertimeCalc();
                     return FinalPayPeriod + FinalOvertime;
                 } else
                 {
+                    //Doesn`t involve Overtime Calculation
                     double FinalPayPeriod = PayPeriod - (PayPeriod - (PayPeriod * TaxRateAlberta)) + (PayPeriod - (PayPeriod * TaxRateMarginal));
                     return FinalPayPeriod;
                 }
                 
             }
 
-
+            //Formatting of Final Calculations to two decimal points
             lblOutput.Text = "$" + String.Format("{0:0.00}", FinalCalc());
 
             //Invisible until calculate button has been pressed
